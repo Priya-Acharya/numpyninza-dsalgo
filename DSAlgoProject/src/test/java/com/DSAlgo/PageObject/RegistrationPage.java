@@ -1,5 +1,6 @@
 package com.DSAlgo.PageObject;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,7 @@ public class RegistrationPage {
 	 @FindBy(xpath=("//input[@id='id_password2']"))WebElement confirmPassword;
 	@FindBy(xpath=("//input[@type='submit']"))WebElement submit ;
 	@FindBy(xpath=("//a[contains(text(), 'Sign out')]")) WebElement signOutBtn;
+	@FindBy(xpath=("//div[@class= 'alert alert-primary']")) WebElement loginAlert;
 	
 	
 	public RegistrationPage(WebDriver driver)
@@ -28,18 +30,28 @@ public class RegistrationPage {
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	public void registration() throws InterruptedException {
+	public boolean registration(String userID,String password1,String passwordCnf) throws InterruptedException {
 		webClick.webClickAll(registerBtn, driver);
-		//String user="Priya_Acharya" + randomStringUtility.getAlphaNumericString(5);
-		userId.sendKeys("Priya_Acharya2");
+		userID = userID==null?"":userID + randomStringUtility.getAlphaNumericString(5);
+		password1 = password1 == null?"":password1;
+		passwordCnf = passwordCnf == null?"":passwordCnf;
+		//userID=userID + randomStringUtility.getAlphaNumericString(5);
+		userId.sendKeys(userID);
 		//System.out.println(UserId);
-		CharSequence password = "Pwd@12345";
-		regPagePassword.sendKeys(password);
-		confirmPassword.sendKeys(password);
-//		Thread.sleep(2000);
+		//CharSequence password = "Pwd@12345";
+		regPagePassword.sendKeys(password1);
+		confirmPassword.sendKeys(passwordCnf);
+		Thread.sleep(2000);
 		webClick.webClickAll(submit, driver);
-//		Thread.sleep(2000);
-		webClick.webClickAll(signOutBtn, driver);
+		try {
+			if (loginAlert.isDisplayed() && loginAlert.getText().contains("You are logged in")) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (NoSuchElementException e) {
+			return false;
+		}
 	}
 	
 	public static void main (String[]args) throws Exception   {
@@ -50,7 +62,7 @@ public class RegistrationPage {
 		
 		RegistrationPage obj2=new RegistrationPage(landingPage.getDriver());
 		//obj2.clickSignIn();
-		obj2.registration();
+		//obj2.registration();
 		
 		
 	}

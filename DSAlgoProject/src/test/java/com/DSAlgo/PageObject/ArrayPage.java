@@ -184,6 +184,24 @@ public class ArrayPage {
 		}
 		
 	}
+	public boolean clickTryBtn_clickSearchOfArray() throws InterruptedException
+	{
+		webClick.webClickAll(tryBtnArray, driver);
+		Thread.sleep(2000);
+		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean addTextTryEditor_clickSearchOfArray() {
+		Actions action = new Actions(driver);
+		textEditor.clear();
+		action.moveToElement(textEditor).click().sendKeys("print('clickSearchOfArray')").build().perform();;
+		webClick.webClickAll(runBtn, driver);
+		return true;
+		
+	}
 	public String clickMaxConsOne() throws InterruptedException {
 		webClick.webClickAll(linkMaxConsOne, driver);
 		Thread.sleep(2000);
@@ -192,6 +210,24 @@ public class ArrayPage {
 		} else {
 			return null;
 		}
+		
+	}
+	public boolean clickTryBtn_MaxConsOne() throws InterruptedException
+	{
+		webClick.webClickAll(tryBtnArray, driver);
+		Thread.sleep(2000);
+		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean addTextTryEditor_MaxConsOne() {
+		Actions action = new Actions(driver);
+		textEditor.clear();
+		action.moveToElement(textEditor).click().sendKeys("print('MaxConsOne')").build().perform();;
+		webClick.webClickAll(runBtn, driver);
+		return true;
 		
 	}
 	public String clickFindNumEvenDig() throws InterruptedException {
@@ -204,6 +240,24 @@ public class ArrayPage {
 		}
 		
 	}
+	public boolean clickTryBtn_clickFindNumEvenDig() throws InterruptedException
+	{
+		webClick.webClickAll(tryBtnArray, driver);
+		Thread.sleep(2000);
+		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean addTextTryEditor_clickFindNumEvenDig() {
+		Actions action = new Actions(driver);
+		textEditor.clear();
+		action.moveToElement(textEditor).click().sendKeys("print('clickFindNumEvenDig')").build().perform();;
+		webClick.webClickAll(runBtn, driver);
+		return true;
+		
+	}
 	public String clickSqarOfSortedArray() throws InterruptedException {
 		webClick.webClickAll(linkSqarOfSortedArray, driver);
 		Thread.sleep(2000);
@@ -212,6 +266,24 @@ public class ArrayPage {
 		} else {
 			return null;
 		}
+		
+	}
+	public boolean clickTryBtn_clickSqarOfSortedArray() throws InterruptedException
+	{
+		webClick.webClickAll(tryBtnArray, driver);
+		Thread.sleep(2000);
+		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean addTextTryEditor_clickSqarOfSortedArray() {
+		Actions action = new Actions(driver);
+		textEditor.clear();
+		action.moveToElement(textEditor).click().sendKeys("print('clickSqarOfSortedArray')").build().perform();;
+		webClick.webClickAll(runBtn, driver);
+		return true;
 		
 	}
 	

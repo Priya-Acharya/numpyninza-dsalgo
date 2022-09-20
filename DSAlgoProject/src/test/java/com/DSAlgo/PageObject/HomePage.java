@@ -29,6 +29,7 @@ public class HomePage {
 	@FindBy(xpath=("//a[contains(text(), 'Sign out')]")) WebElement signOutBtn;
 	@FindBy(xpath=("//input[@name='username']"))WebElement loginUserName;
 	@FindBy(xpath=("//input[@name='password']"))WebElement loginPassword;
+	@FindBy(xpath=("//a[contains(text(), 'Register')]"))WebElement registerBtn;
 	
 	//parameterize constructor
 	public HomePage(WebDriver driver)
@@ -101,29 +102,33 @@ public class HomePage {
 		Thread.sleep(4000);
 		driver.quit();
 	}
+	public void clickRegisterBtn()
+	  {
+			  webClick.webClickAll(registerBtn, driver);
+		  
+	  }
 	
 	public void signOut()
 	  {
-		  if (signOutBtn.isDisplayed()) {
 			  webClick.webClickAll(signOutBtn, driver);
-		  }
+		  
 	  }
 
 
 
-public static void main (String[]args) throws Exception   {
-	
-	LandingPage landingPage = new LandingPage();
-	landingPage.lunchApp();
-	landingPage.clickOnGetStarted();
-	
-	HomePage obj2=new HomePage(landingPage.getDriver());
-	obj2.validatedropDownlink();
-	obj2.beforeLoginClick();
-	obj2.validateloginFromdropDown();
-	obj2.clickSignIn();
-	
-	
-	
-}
+//public static void main (String[]args) throws Exception   {
+//	
+//	LandingPage landingPage = new LandingPage();
+//	landingPage.lunchApp();
+//	landingPage.clickOnGetStarted();
+//	
+//	HomePage obj2=new HomePage(landingPage.getDriver());
+//	obj2.validatedropDownlink();
+//	obj2.beforeLoginClick();
+//	obj2.validateloginFromdropDown();
+//	obj2.clickSignIn();
+//	
+//	
+//	
+//}
 }

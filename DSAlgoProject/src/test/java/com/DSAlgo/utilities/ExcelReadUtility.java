@@ -49,17 +49,17 @@ public class ExcelReadUtility {
 	       return colCount;
 	   }
 	   
-	   public String getCellData(String sheetName,int rownum,int colnum)throws IOException
-	   {
+		public String getCellData(String sheetName, int rownum, int colnum) throws IOException {
 			fis = new FileInputStream(xlFilePath);
-	       workbook = new XSSFWorkbook(fis);
-	       sheet = workbook.getSheet(sheetName);
-	       row =sheet.getRow(rownum);
-	       cell = row.getCell(colnum);
-	       String data= cell.getStringCellValue();
-		   workbook.close();
-		    fis.close();
-	       return data;
-	   }
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheet(sheetName);
+			row = sheet.getRow(rownum);
+			cell = row.getCell(colnum);
+			String data = (cell == null || cell.getStringCellValue().length() == 0) ? 
+					null : cell.getStringCellValue();
+			workbook.close();
+			fis.close();
+			return data;
+		}
 
 }

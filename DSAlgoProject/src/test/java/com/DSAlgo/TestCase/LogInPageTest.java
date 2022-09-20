@@ -57,13 +57,13 @@ public class LogInPageTest {
 
 		String xlFilePath = System.getProperty("user.dir") + "/src/test/resources/InputData.xlsx";
 		ExcelReadUtility xlUtil = new ExcelReadUtility(xlFilePath);
-		int totalRows = xlUtil.getRowCount("Sheet1");
-		int totalCols = xlUtil.getColumnCount("Sheet1", 1);
+		int totalRows = xlUtil.getRowCount("signIn");
+		int totalCols = xlUtil.getColumnCount("signIn", 1);
 		String loginData[][] = new String[totalRows][totalCols];
 
 		for (int i = 1; i <= totalRows; i++) {
 			for (int j = 0; j < totalCols; j++) {
-				loginData[i - 1][j] = xlUtil.getCellData("Sheet1", i, j);
+				loginData[i - 1][j] = xlUtil.getCellData("signIn", i, j);
 			}
 		}
 
@@ -102,7 +102,7 @@ public class LogInPageTest {
 //	}
 
 	@Test(dataProvider = "logindata")
-	public void logintest(String user, String pwd, String exp) {
+	public void logintest(String user, String pwd, String exp, String cases) {
 		String actRes = logInPage.signIn(user, pwd);
 		assertEquals(actRes, exp);
 	}

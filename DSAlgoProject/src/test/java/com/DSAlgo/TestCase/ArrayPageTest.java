@@ -109,27 +109,34 @@ public class ArrayPageTest {
 	  Ap.addTextTryEditor_ApplicationOfArray();
 		assertTrue(true);
   }
+  @Test
+  public void clickPracticeQuestionTest() throws InterruptedException 
+  {
+	Ap.clickPracticeQuestion();
+    assertTrue(true);
+  }
+  @Test
+  public void clickSearchOfArrayTest()throws InterruptedException
+  {
+    Ap.clickTryBtn_clickSearchOfArray();
+    assertTrue(true);
+  }
+  @Test
+  public void clickMaxConsOneTest() throws InterruptedException
+  {
+	  Ap.clickTryBtn_MaxConsOne();
+	  assertTrue(true);
+  }
+  @Test
+  public void clickFindNumEvenDigTest()throws InterruptedException
+  {
+	 
+	  Ap.clickTryBtn_clickFindNumEvenDig();
+	  assertTrue(true);
+  }
   
-  @Test
-  public void clickFindNumEvenDigTest() {
-    throw new RuntimeException("Test not implemented");
-  }
 
-  @Test
-  public void clickMaxConsOneTest() {
-    throw new RuntimeException("Test not implemented");
-  }
-
-  @Test
-  public void clickPracticeQuestionTest() {
-    throw new RuntimeException("Test not implemented");
-  }
-
-  @Test
-  public void clickSearchOfArrayTest() {
-    throw new RuntimeException("Test not implemented");
-  }
-
+  
   @Test
   public void clickSqarOfSortedArrayTest() {
     throw new RuntimeException("Test not implemented");

@@ -32,7 +32,8 @@ public class LogInPage {
 	
 		public String signIn(String userId,String pwd)
 	  {
-		  	 
+			userId= userId==null?"": userId;
+			pwd= pwd==null?"": pwd;
 		  System.out.println("userId :: " + userId + " pwd :: " + pwd);
 		   loginUserName.clear();
 		  if (loginUserName.isDisplayed()) {
@@ -41,7 +42,12 @@ public class LogInPage {
 			   loginPassword.sendKeys(pwd);
 		  }
 		  webClick.webClickAll(submit, driver);
-		  String actualmsg = loginAlert.getText();
+		  String actualmsg=null;
+		try {
+			actualmsg = loginAlert.getText();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 //		  webClick.webClickAll(signOutBtn, driver);
 		  return actualmsg;
 //			String ActualTitle=driver.getTitle();
