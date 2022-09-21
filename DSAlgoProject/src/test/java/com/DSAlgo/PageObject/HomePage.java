@@ -2,11 +2,12 @@ package com.DSAlgo.PageObject;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Assert;
 
 import com.DSAlgo.utilities.webClick;
 
@@ -111,6 +112,14 @@ public class HomePage {
 	public void signOut()
 	  {
 			  webClick.webClickAll(signOutBtn, driver);
+		  
+	  }
+	
+	public String signOutWithMsg()
+	  {
+			  webClick.webClickAll(signOutBtn, driver);
+			  return driver.findElement(By.xpath("//div[@class='alert alert-primary']")).getText();
+			 
 		  
 	  }
 
