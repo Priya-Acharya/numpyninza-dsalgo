@@ -62,6 +62,8 @@ public class ArrayPageTest {
   public void addTextTryEditor_ArrayInPythonTest() {
 	  Ap.addTextTryEditor_ArrayInPython();
 		assertTrue(true);
+		landingPage.getDriver().navigate().back();
+		landingPage.getDriver().navigate().back();
   }
 
   @Test(priority = 5)
@@ -78,6 +80,8 @@ public class ArrayPageTest {
   public void addTextTryEditor_ArrayUsingListTest() {
 	  Ap.addTextTryEditor_ArrayUsingList();
 		assertTrue(true);
+   landingPage.getDriver().navigate().back();
+   landingPage.getDriver().navigate().back();
   }
   @Test(priority = 8)
   public void clickBasicOperrationListTest() throws InterruptedException {
@@ -86,13 +90,15 @@ public class ArrayPageTest {
   }
   @Test(priority = 9)
   public void clickTryBtn_BasicOperrationListTest() throws InterruptedException {
-	  boolean result = Ap.clickTryBtn_BasicOperrationList();
+	  boolean result = Ap.clickTryBtn_BasicOperrationListt();
 		assertEquals(result, true);
   }
   @Test(priority =10 )
   public void addTextTryEditor_BasicOperrationListTest() {
 	  Ap.addTextTryEditor_BasicOperrationList();
 		assertTrue(true);
+		landingPage.getDriver().navigate().back();
+		landingPage.getDriver().navigate().back();
   }
   @Test(priority =11 )
   public void clickApplicationOfArrayTest() throws InterruptedException {
@@ -108,49 +114,61 @@ public class ArrayPageTest {
   public void addTextTryEditor_ApplicationOfArrayTest() {
 	  Ap.addTextTryEditor_ApplicationOfArray();
 		assertTrue(true);
-  }
-  @Test
+		landingPage.getDriver().navigate().back();
+		
+		 }
+  @Test(priority = 14)
   public void clickPracticeQuestionTest() throws InterruptedException 
   {
-	Ap.clickPracticeQuestion();
+	 // landingPage.getDriver().navigate().back();
+	  Ap.clickPracticeQuestion();
     assertTrue(true);
   }
-  @Test
+  @Test(priority = 15)
   public void clickSearchOfArrayTest()throws InterruptedException
   {
-    Ap.clickTryBtn_clickSearchOfArray();
+    Ap.clickSearchOfArray();
+    Ap.addTextTryEditor_clickSearchOfArray();
     assertTrue(true);
+    landingPage.getDriver().navigate().back();
+    
   }
-  @Test
+  @Test(priority = 16)
   public void clickMaxConsOneTest() throws InterruptedException
   {
-	  Ap.clickTryBtn_MaxConsOne();
+	  Ap.clickMaxConsOne();
+	  Ap.addTextTryEditor_MaxConsOne();
 	  assertTrue(true);
+	  landingPage.getDriver().navigate().back();
   }
-  @Test
+  @Test(priority = 17)
   public void clickFindNumEvenDigTest()throws InterruptedException
   {
 	 
-	  Ap.clickTryBtn_clickFindNumEvenDig();
+	  Ap.clickFindNumEvenDig();
+	  Ap.addTextTryEditor_FindNumEvenDig();
 	  assertTrue(true);
+	  landingPage.getDriver().navigate().back();
   }
   
 
   
-  @Test
-  public void clickSqarOfSortedArrayTest() {
-    throw new RuntimeException("Test not implemented");
+  @Test(priority = 18)
+  public void clickSqarOfSortedArrayTest() throws InterruptedException
+  {
+	  Ap.clickSqarOfSortedArray();
+	  Ap.addTextTryEditor_SqarOfSortedArray();
+	  assertTrue(true);
+	  landingPage.getDriver().navigate().back();
   }
-  @Test(priority = 9)
+  @Test(priority = 19)
 	public void signOut_from_array_Test() throws InterruptedException
 
 	{
 		landingPage.getDriver().navigate().back();
 		hmp.signOut();
-		// Assert.assertEquals(message,
-		// prop.getProperty("signout.success.title"),prop.getProperty("signout.success.title.notFound"));
 	}
-  
+ 
   @AfterClass
 	public void tearDown() throws InterruptedException {
 		landingPage.getDriver().quit();

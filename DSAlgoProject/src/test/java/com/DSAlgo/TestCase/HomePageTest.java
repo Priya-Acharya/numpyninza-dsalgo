@@ -1,17 +1,36 @@
 package com.DSAlgo.TestCase;
 
 import org.testng.annotations.Test;
+
+import com.DSAlgo.PageObject.GraphPage;
+import com.DSAlgo.PageObject.HomePage;
+import com.DSAlgo.PageObject.LandingPage;
+import com.DSAlgo.PageObject.LogInPage;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
+
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 
 public class HomePageTest {
-  @Test(dataProvider = "dp")
-  public void f(Integer n, String s) {
-  }
+	HomePage hmp;
+	LandingPage landingPage;
+
+	
+	@BeforeClass
+	public void beforeClass() throws InterruptedException {
+		landingPage = new LandingPage();
+		landingPage.lunchApp();
+		landingPage.clickOnGetStarted();
+		hmp = new HomePage(landingPage.getDriver());
+		
+	}
+	
   @BeforeMethod
   public void beforeMethod() {
   }
@@ -20,19 +39,7 @@ public class HomePageTest {
   public void afterMethod() {
   }
 
-
-  @DataProvider
-  public Object[][] dp() {
-    return new Object[][] {
-      new Object[] { 1, "a" },
-      new Object[] { 2, "b" },
-    };
-  }
-  @BeforeClass
-  public void beforeClass() {
-  }
-
-  @AfterClass
+    @AfterClass
   public void afterClass() {
   }
 
@@ -42,27 +49,47 @@ public class HomePageTest {
 
 
   @Test
-  public void aftertestTest() {
-    throw new RuntimeException("Test not implemented");
+  public void clickRegisterBtnTest() {
+	  hmp.clickRegisterBtn();
+	  assertTrue(true);
   }
 
   @Test
-  public void beforeLoginClickTest() {
-    throw new RuntimeException("Test not implemented");
+  public void beforeLoginClickTest() throws Exception {
+	  String alert=hmp.beforeLoginClick();
+	  if("You are not logged in".equals(alert))
+		{
+			System.out.println("Alert is displayed : From Pane");
+		}
+		else
+		{
+			throw new Exception("Alert is not displayed");
+		}
+	  assertTrue(alert.equals("You are not logged in") );
   }
 
   @Test
-  public void clickSignInTest() {
-    throw new RuntimeException("Test not implemented");
+  public void clickSignInTest() throws InterruptedException {
+	  hmp.clickSignIn();
+	  assertTrue(true);
+	  
   }
 
   @Test
-  public void validatedropDownlinkTest() {
-    throw new RuntimeException("Test not implemented");
+  public void validatedropDownlinkTest() throws Exception {
+    hmp.validatedropDownlink();
+    assertTrue(true);
   }
 
   @Test
-  public void validateloginFromdropDownTest() {
-    throw new RuntimeException("Test not implemented");
+  public void validateloginFromdropDownTest() throws Exception {
+    hmp.validateloginFromdropDown();
+    assertTrue(true);
+    
   }
+  @Test
+  public void signOutTest() throws Exception {
+    hmp.signOut();
+    assertTrue(true);
+}
 }

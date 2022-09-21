@@ -38,19 +38,12 @@ public class HomePage {
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	public void beforeLoginClick() throws Exception
+	public String beforeLoginClick() throws Exception
 	{
 		webClick.webClickAll(loginPane, driver);
 		//Thread.sleep(2000);
 		String alert = loginAlert.getText();
-		if("You are not logged in".equals(alert))
-		{
-			System.out.println("Alert is displayed : From Pane");
-		}
-		else
-		{
-			throw new Exception("Alert is not displayed");
-		}
+		return alert;
 	}
 	
 	public void validateloginFromdropDown() throws Exception {
@@ -71,14 +64,11 @@ public class HomePage {
 		
 	public void clickSignIn() throws InterruptedException
 	{
-		//getstarted.click();
+		
 		webClick.webClickAll(signInBtn, driver);
-//		System.out.println(user);
 		Thread.sleep(2000);
 		System.out.println(loginUserName.isDisplayed());
 		System.out.println(loginPassword.isDisplayed());
-//		webClick.webClickAll(submit,driver);
-//		webClick.webClickAll(signOutBtn,driver);
 		Thread.sleep(2000);
 	}
 	

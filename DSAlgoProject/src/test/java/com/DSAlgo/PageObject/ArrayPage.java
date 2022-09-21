@@ -1,5 +1,6 @@
 package com.DSAlgo.PageObject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,7 +35,7 @@ public class ArrayPage {
 	@FindBy(xpath = "//a[contains(text(), 'Squares of  a Sorted Array')]")
 	WebElement linkSqarOfSortedArray;
 	
-	@FindBy(xpath = "//a[@class='btn btn-info']]")WebElement tryBtnArray;// try button
+	@FindBy(xpath = "//a[@class='btn btn-info']")WebElement tryBtnArray;// try button
 	
 	@FindBy(xpath=("//h4[contains(text(),'Array')]")) WebElement arrayPgTitle;
 	@FindBy(xpath=("//span[@role='presentation']//span")) WebElement textEditor;
@@ -43,7 +44,8 @@ public class ArrayPage {
 	@FindBy(xpath=("//button[@type='button']")) WebElement runBtnText;
 	@FindBy(xpath=("//strong[contains(text(),'QUESTION')]")) WebElement questionPgTitle;
 	//@FindBy(xpath="//p[contains(text(),'Graph Representations')]")WebElement titleGraphReprestBtn;
-
+	@FindBy(xpath=("//div[@class='CodeMirror cm-s-default']")) WebElement textEditorPane;
+	
 	public String arrayPageOpen() throws InterruptedException {
 		webClick.webClickAll(dropDownlink, driver);
 		webClick.webClickAll(GetStartArray, driver);
@@ -55,7 +57,8 @@ public class ArrayPage {
 		}
 	}
 	
-	public String clickArrayInPython() throws InterruptedException {
+	public String clickArrayInPython() throws InterruptedException
+	{
 		webClick.webClickAll(linkArrayInPython, driver);
 		Thread.sleep(2000);
 		if (tryBtnArray.isDisplayed()) {
@@ -80,6 +83,7 @@ public class ArrayPage {
 		action.moveToElement(textEditor).click().sendKeys("print('ArrayInPython')").build().perform();;
 		webClick.webClickAll(runBtn, driver);
 		return true;
+		
 		
 	}
 	
@@ -113,14 +117,14 @@ public class ArrayPage {
 	public String clickBasicOperrationList() throws InterruptedException {
 		webClick.webClickAll(linkBasicOperrationList, driver);
 		Thread.sleep(2000);
-		if (tryBtnArray.isDisplayed()) {
-			return tryBtnArray.getText();
+		if (runBtnText.isDisplayed()) {
+			return runBtnText.getText();
 		} else {
 			return null;
 		}
 		
 	}
-	public boolean clickTryBtn_BasicOperrationList() throws InterruptedException
+	public boolean clickTryBtn_BasicOperrationListt() throws InterruptedException
 	{
 		webClick.webClickAll(tryBtnArray, driver);
 		Thread.sleep(2000);
@@ -130,6 +134,7 @@ public class ArrayPage {
 			return false;
 		}
 	}
+
 	public boolean addTextTryEditor_BasicOperrationList() {
 		Actions action = new Actions(driver);
 		action.moveToElement(textEditor).click().sendKeys("print('BasicOperrationList')").build().perform();;
@@ -167,8 +172,8 @@ public class ArrayPage {
 	public String clickPracticeQuestion() throws InterruptedException {
 		webClick.webClickAll(linkPracticeQuestion, driver);
 		Thread.sleep(2000);
-		if (tryBtnArray.isDisplayed()) {
-			return tryBtnArray.getText();
+		if (linkSearchOfArray.isDisplayed()) {
+			return linkSearchOfArray.getText();
 		} else {
 			return null;
 		}
@@ -177,28 +182,26 @@ public class ArrayPage {
 	public String clickSearchOfArray() throws InterruptedException {
 		webClick.webClickAll(linkSearchOfArray, driver);
 		Thread.sleep(2000);
-		if (runAndSubmitBtn.isDisplayed()) {
-			return runBtnText.getText();
+		if (questionPgTitle.isDisplayed()) {
+			return questionPgTitle.getText();
 		} else {
 			return null;
 		}
 		
 	}
-	public boolean clickTryBtn_clickSearchOfArray() throws InterruptedException
-	{
-		webClick.webClickAll(tryBtnArray, driver);
-		Thread.sleep(2000);
-		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	
 	public boolean addTextTryEditor_clickSearchOfArray() {
 		Actions action = new Actions(driver);
-		textEditor.clear();
-		action.moveToElement(textEditor).click().sendKeys("print('clickSearchOfArray')").build().perform();;
+		action.moveToElement(textEditor).click().
+		sendKeys(Keys.ARROW_DOWN, Keys.ENTER, "print('clickFindNumEvenDig')", 
+				Keys.ENTER,Keys.BACK_SPACE,Keys.BACK_SPACE,"search([1,2],1)").build().perform();
 		webClick.webClickAll(runBtn, driver);
+		try {
+			Thread.sleep(5000l);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 		
 	}
@@ -212,21 +215,19 @@ public class ArrayPage {
 		}
 		
 	}
-	public boolean clickTryBtn_MaxConsOne() throws InterruptedException
-	{
-		webClick.webClickAll(tryBtnArray, driver);
-		Thread.sleep(2000);
-		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+
 	public boolean addTextTryEditor_MaxConsOne() {
 		Actions action = new Actions(driver);
-		textEditor.clear();
-		action.moveToElement(textEditor).click().sendKeys("print('MaxConsOne')").build().perform();;
+		action.moveToElement(textEditor).click().
+		sendKeys(Keys.ARROW_DOWN, Keys.ENTER, "print('clickFindNumEvenDig')", 
+				Keys.ENTER,Keys.BACK_SPACE,Keys.BACK_SPACE,"findMaxConsecutiveOnes([1,2])").build().perform();
 		webClick.webClickAll(runBtn, driver);
+		try {
+			Thread.sleep(5000l);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 		
 	}
@@ -240,22 +241,21 @@ public class ArrayPage {
 		}
 		
 	}
-	public boolean clickTryBtn_clickFindNumEvenDig() throws InterruptedException
-	{
-		webClick.webClickAll(tryBtnArray, driver);
-		Thread.sleep(2000);
-		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	public boolean addTextTryEditor_clickFindNumEvenDig() {
+
+	public boolean addTextTryEditor_FindNumEvenDig() {
 		Actions action = new Actions(driver);
-		textEditor.clear();
-		action.moveToElement(textEditor).click().sendKeys("print('clickFindNumEvenDig')").build().perform();;
+		action.moveToElement(textEditor).click().
+		sendKeys(Keys.ARROW_DOWN, Keys.ENTER, "print('clickFindNumEvenDig')", 
+				Keys.ENTER,Keys.BACK_SPACE,Keys.BACK_SPACE,"findNumbers([1,2])").build().perform();
 		webClick.webClickAll(runBtn, driver);
+		try {
+			Thread.sleep(5000l);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
+
 		
 	}
 	public String clickSqarOfSortedArray() throws InterruptedException {
@@ -268,35 +268,23 @@ public class ArrayPage {
 		}
 		
 	}
-	public boolean clickTryBtn_clickSqarOfSortedArray() throws InterruptedException
-	{
-		webClick.webClickAll(tryBtnArray, driver);
-		Thread.sleep(2000);
-		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	public boolean addTextTryEditor_clickSqarOfSortedArray() {
+	
+	public boolean addTextTryEditor_SqarOfSortedArray() {
 		Actions action = new Actions(driver);
-		textEditor.clear();
-		action.moveToElement(textEditor).click().sendKeys("print('clickSqarOfSortedArray')").build().perform();;
+			
+		action.moveToElement(textEditor).click().
+		sendKeys(Keys.ARROW_DOWN, Keys.ENTER, "print('clickSqarOfSortedArray')", 
+				Keys.ENTER,Keys.BACK_SPACE,Keys.BACK_SPACE,"sortedSquares([1,2])").build().perform();
 		webClick.webClickAll(runBtn, driver);
+		try {
+			Thread.sleep(5000l);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 		
 	}
-	
-//	public boolean clickTryBtn_PracticeQuestion() throws InterruptedException
-//	{
-//		webClick.webClickAll(tryBtnArray, driver);
-//		Thread.sleep(2000);
-//		if (textEditor.isDisplayed()&& runBtn.isDisplayed() ) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
 	
 	
 	

@@ -68,7 +68,7 @@ public class GraphPageTest {
 	
 	@Test(priority = 5)
 	public void clickGraphRepresenBtnTest() throws InterruptedException {
-		landingPage.getDriver().navigate().back();
+		landingPage.getDriver().navigate().back();	
 		landingPage.getDriver().navigate().back();
 		String gpTitel=gp.clickGraphRepresenBtn();
 		assertEquals(gpTitel, "Graph Representations");
