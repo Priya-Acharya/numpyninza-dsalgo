@@ -54,16 +54,44 @@ public class RegistrationPage {
 		}
 	}
 	
-	public static void main (String[]args) throws Exception   {
+//	public static void main (String[]args) throws Exception   {
+//		
+//		LandingPage landingPage = new LandingPage();
+//		landingPage.lunchApp();
+//		landingPage.clickOnGetStarted();
+//		
+//		RegistrationPage obj2=new RegistrationPage(landingPage.getDriver());
+//		//obj2.clickSignIn();
+//		//obj2.registration();
+//		
+//		
+//	}
+	
+	public String registration_with_existuser(String userID,String password1,String passwordCnf) throws InterruptedException {
 		
-		LandingPage landingPage = new LandingPage();
-		landingPage.lunchApp();
-		landingPage.clickOnGetStarted();
 		
-		RegistrationPage obj2=new RegistrationPage(landingPage.getDriver());
-		//obj2.clickSignIn();
-		//obj2.registration();
+		webClick.webClickAll(registerBtn, driver);
 		
+		userId.sendKeys(userID);
+		regPagePassword.sendKeys(password1);
+		confirmPassword.sendKeys(passwordCnf);
+		//webClick.webClickAll(userId, driver);
+//		webClick.webClickAll(regPagePassword, driver);
+//		webClick.webClickAll(confirmPassword, driver);
+//		webClick.webClickAll(registerBtn, driver);
 		
+		Thread.sleep(2000);
+		webClick.webClickAll(submit, driver);
+		
+		String actualmsg=null;
+		try {
+			actualmsg = loginAlert.getText();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		  webClick.webClickAll(signOutBtn, driver);
+		  return actualmsg;
 	}
+	
+	
 }

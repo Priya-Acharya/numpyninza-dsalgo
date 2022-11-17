@@ -1,0 +1,746 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>93/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 21 19:53:19 CDT 2022</td>
+</tr>
+<tr><td>Total time:</td><td>825 seconds (825893 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.tearDown()'><b>tearDown</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [830cae52bcc2081c3331333419af7fed, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\priya\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64378}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64378/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 830cae52bcc2081c3331333419af7fed
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:132)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:443)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:280)
+	at com.DSAlgo.TestCase.StackPageTest.tearDown(StackPageTest.java:120)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: java.util.concurrent.ExecutionException: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
+	... 30 more
+Caused by: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.os.OsProcess.waitFor(OsProcess.java:174)
+	at org.openqa.selenium.os.CommandLine.waitFor(CommandLine.java:114)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$2(DriverCommandExecutor.java:122)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace810103755", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace810103755'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [830cae52bcc2081c3331333419af7fed, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\priya\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64378}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64378/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 830cae52bcc2081c3331333419af7fed
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:132)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:443)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:280)
+	at com.DSAlgo.TestCase.StackPageTest.tearDown(StackPageTest.java:120)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:220)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:130)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.util.concurrent.ExecutionException: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
+	... 30 more
+Caused by: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.os.OsProcess.waitFor(OsProcess.java:174)
+	at org.openqa.selenium.os.CommandLine.waitFor(CommandLine.java:114)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$2(DriverCommandExecutor.java:122)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>24</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.tearDown()'><b>tearDown</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0dc69661699174865456d456ec50858b, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\priya\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64276}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64276/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0dc69661699174865456d456ec50858b
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:132)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:443)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:280)
+	at com.DSAlgo.TestCase.LinkedListTest.tearDown(LinkedListTest.java:154)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: java.util.concurrent.ExecutionException: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
+	... 30 more
+Caused by: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.os.OsProcess.waitFor(OsProcess.java:174)
+	at org.openqa.selenium.os.CommandLine.waitFor(CommandLine.java:114)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$2(DriverCommandExecutor.java:122)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1654025375", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1654025375'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0dc69661699174865456d456ec50858b, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\priya\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64276}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64276/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0dc69661699174865456d456ec50858b
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:132)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:443)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:280)
+	at com.DSAlgo.TestCase.LinkedListTest.tearDown(LinkedListTest.java:154)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:220)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:130)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.util.concurrent.ExecutionException: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
+	... 30 more
+Caused by: org.openqa.selenium.TimeoutException: Process timed out after waiting for 20000 ms.
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-PO0RLHQF&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.os.OsProcess.waitFor(OsProcess.java:174)
+	at org.openqa.selenium.os.CommandLine.waitFor(CommandLine.java:114)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$2(DriverCommandExecutor.java:122)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>25</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.click_GetStartedStack()'><b>click_GetStartedStack</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickArrayUsingListTest()'><b>clickArrayUsingListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.click_Getstarted_below_DataStructureTest()'><b>click_Getstarted_below_DataStructureTest</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: Priya_Acharya3, Pwd@1234, Invalid Username and Password, Invalid</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.addTextTryEditorTest__GraphRepres()'><b>addTextTryEditorTest__GraphRepres</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testTrTraversalsIllustartion()'><b>testTrTraversalsIllustartion</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.clickTryBtnTest_GraphRepres()'><b>clickTryBtnTest_GraphRepres</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: Priya.Acharya, null, null, Invalid</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: null, Pwd@1234, null, Invalid</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_Insertion_Test()'><b>click_Insertion_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_Getstarted_below_LinkedListTest()'><b>click_Getstarted_below_LinkedListTest</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.signOut_from_graph_Test()'><b>signOut_from_graph_Test</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: #$%++++#, xyz12345, xyz12345, false, Please enter a valid username</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.click_Get_Application()'><b>click_Get_Application</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>6</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testTypesOfBinTr()'><b>testTypesOfBinTr</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickSearchOfArrayTest()'><b>clickSearchOfArrayTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_Traverse_Test()'><b>click_Traverse_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.clickRegisterBtnTest()'><b>clickRegisterBtnTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testClickOnImplemenetationOfBinaryTr()'><b>testClickOnImplemenetationOfBinaryTr</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.clickGraphRepresenBtnTest()'><b>clickGraphRepresenBtnTest</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.click_Getstarted_below_QueuePageTest()'><b>click_Getstarted_below_QueuePageTest</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.clickTryBtnTest_graph()'><b>clickTryBtnTest_graph</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>3</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickTryBtn_ApplicationOfArrayTest()'><b>clickTryBtn_ApplicationOfArrayTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.landingPageTest.verifyLandingPagetitleTest()'><b>verifyLandingPagetitleTest</b><br>Test class: com.DSAlgo.TestCase.landingPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.landingPageTest@4d0d9fe7</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, xyz1234, xyz1234, false, Password should contain atleast 8 characters </td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.addTextTryEditorTest_graph()'><b>addTextTryEditorTest_graph</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.addTextTryEditor_ApplicationOfArrayTest()'><b>addTextTryEditor_ApplicationOfArrayTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.beforeLoginClickTest()'><b>beforeLoginClickTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_Introduction_Test()'><b>click_Introduction_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>7</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.validatedropDownlinkTest()'><b>validatedropDownlinkTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.cllick_queueOperation()'><b>cllick_queueOperation</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>4</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickMaxConsOneTest()'><b>clickMaxConsOneTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>9</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.clickOntreeBtn()'><b>clickOntreeBtn</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.click_implOfQueueInPython_Test()'><b>click_implOfQueueInPython_Test</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testImplementationOfPython()'><b>testImplementationOfPython</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.cllick_practicQuestion()'><b>cllick_practicQuestion</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.arrayPageOpenTest()'><b>arrayPageOpenTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickTryBtn_ArrayInPythonTest()'><b>clickTryBtn_ArrayInPythonTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_PracticeQns_Test()'><b>click_PracticeQns_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, 12345678, 12345678, false, Password should contain character with number </td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.addTextTryEditor_ArrayUsingListTest()'><b>addTextTryEditor_ArrayUsingListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickApplicationOfArrayTest()'><b>clickApplicationOfArrayTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: null, null, null, false, please fill out this filled</td>
+<td></td>
+<td>7</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.validateloginFromdropDownTest()'><b>validateloginFromdropDownTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>16</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickPracticeQuestionTest()'><b>clickPracticeQuestionTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testTrTraversals()'><b>testTrTraversals</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.click_Get_Implementation()'><b>click_Get_Implementation</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>6</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.addTextTryEditor_BasicOperrationListTest()'><b>addTextTryEditor_BasicOperrationListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.click_Get_PracticQuestion()'><b>click_Get_PracticQuestion</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickTryBtn_BasicOperrationListTest()'><b>clickTryBtn_BasicOperrationListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testTerminology()'><b>testTerminology</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.clickGraphBtnTest()'><b>clickGraphBtnTest</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.signOut_from_dataStructurePage_Test()'><b>signOut_from_dataStructurePage_Test</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, xyz12345, null, false, please fill out this filled</td>
+<td></td>
+<td>7</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, xyz12345, 12345xyz, false, password_mismatch:The two password fields didn’t match.</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, xyz12345, xyz12345, true, New Account Created. You are logged in as abcd1234 </td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickSqarOfSortedArrayTest()'><b>clickSqarOfSortedArrayTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.click_tryHereTest()'><b>click_tryHereTest</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>3</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.addTextTryEditor_ArrayInPythonTest()'><b>addTextTryEditor_ArrayInPythonTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: Priya_Acharya3, Pwd@12345, Invalid Username and Password, Invalid</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.signOut_from_linkedListpage_Test()'><b>signOut_from_linkedListpage_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.GraphPageTest.graphPageOpenTest()'><b>graphPageOpenTest</b><br>Test class: com.DSAlgo.TestCase.GraphPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.GraphPageTest@6f01b95f</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.landingPageTest.validatelandingpageTest()'><b>validatelandingpageTest</b><br>Test class: com.DSAlgo.TestCase.landingPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.landingPageTest@4d0d9fe7</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickFindNumEvenDigTest()'><b>clickFindNumEvenDigTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testclickOnBinaryTrTraversals()'><b>testclickOnBinaryTrTraversals</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickArrayInPythonTest()'><b>clickArrayInPythonTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: Priya.Acharya, Pwd@1234, You are logged in, Valid</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testClickOnImplementationOfBst()'><b>testClickOnImplementationOfBst</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>15</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LogInPageTest.logintest()'><b>logintest</b><br>Test class: com.DSAlgo.TestCase.LogInPageTest<br>Parameters: Priya.Acharya, Pwd@12345, Invalid Username and Password, Invalid</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.LogInPageTest@71075444</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.cllick_implementationUsingArray()'><b>cllick_implementationUsingArray</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>4</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.clickOnTryEditor()'><b>clickOnTryEditor</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>7</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testclickOnBinarySearchTree()'><b>testclickOnBinarySearchTree</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.sendCodeTest()'><b>sendCodeTest</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>6</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickTryBtn_ArrayUsingListTest()'><b>clickTryBtn_ArrayUsingListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testClickOnApplicationOfBinaryTrr()'><b>testClickOnApplicationOfBinaryTrr</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.click_OperationInStack()'><b>click_OperationInStack</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_Deletion_Test()'><b>click_Deletion_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.click_timeComplexityTest()'><b>click_timeComplexityTest</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_createLinkedlist_Test()'><b>click_createLinkedlist_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>6</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.StackPageTest.signOut_from_linkedListpage_Test()'><b>signOut_from_linkedListpage_Test</b><br>Test class: com.DSAlgo.TestCase.StackPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.StackPageTest@6f53b8a</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testTypesOfTree()'><b>testTypesOfTree</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>13</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.landingPageTest.clickOnGetStartedTest()'><b>clickOnGetStartedTest</b><br>Test class: com.DSAlgo.TestCase.landingPageTest</td>
+<td></td>
+<td>1</td>
+<td>com.DSAlgo.TestCase.landingPageTest@4d0d9fe7</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testBinTr()'><b>testBinTr</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>14</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.RegistrationPageTest.registrationTest()'><b>registrationTest</b><br>Test class: com.DSAlgo.TestCase.RegistrationPageTest<br>Parameters: ABCDEFGH, null, xyz12345, false, please fill out this filled</td>
+<td></td>
+<td>8</td>
+<td>com.DSAlgo.TestCase.RegistrationPageTest@65987993</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.DataStructureTest.click_practiceQnsTest()'><b>click_practiceQnsTest</b><br>Test class: com.DSAlgo.TestCase.DataStructureTest</td>
+<td></td>
+<td>3</td>
+<td>com.DSAlgo.TestCase.DataStructureTest@4f32a3ad</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.clickBasicOperrationListTest()'><b>clickBasicOperrationListTest</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>2</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.click_implementationUsingCollection()'><b>click_implementationUsingCollection</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>4</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.signOutTest()'><b>signOutTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>15</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.HomePageTest.clickSignInTest()'><b>clickSignInTest</b><br>Test class: com.DSAlgo.TestCase.HomePageTest</td>
+<td></td>
+<td>4</td>
+<td>com.DSAlgo.TestCase.HomePageTest@6c4906d3</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.ArrayPageTest.signOut_from_array_Test()'><b>signOut_from_array_Test</b><br>Test class: com.DSAlgo.TestCase.ArrayPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.ArrayPageTest@6b695b06</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.LinkedListTest.click_typesofLinkedlist_Test()'><b>click_typesofLinkedlist_Test</b><br>Test class: com.DSAlgo.TestCase.LinkedListTest</td>
+<td></td>
+<td>5</td>
+<td>com.DSAlgo.TestCase.LinkedListTest@4d1bf319</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.QueuePageTest.signOut_from_queuePage_Test()'><b>signOut_from_queuePage_Test</b><br>Test class: com.DSAlgo.TestCase.QueuePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.QueuePageTest@5c80cf32</td></tr>
+<tr>
+<td title='com.DSAlgo.TestCase.TreePageTest.testForTreePage()'><b>testForTreePage</b><br>Test class: com.DSAlgo.TestCase.TreePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.DSAlgo.TestCase.TreePageTest@7d900ecf</td></tr>
+</table><p>
+</body>
+</html>

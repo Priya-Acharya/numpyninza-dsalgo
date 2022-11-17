@@ -3,11 +3,14 @@ package com.DSAlgo.TestCase;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.DSAlgo.PageObject.LandingPage;
 
+@Listeners({AllureListener.class})
 public class landingPageTest {
 	LandingPage landingPage;
 	
@@ -23,10 +26,6 @@ public class landingPageTest {
 	  assertTrue(true);
   }
 
-//  @Test(priority = 1)
-//  public void lunchAppTest() {
-//    throw new RuntimeException("Test not implemented");
-//  }
 
   @Test(priority =1)
   public void validatelandingpageTest() {
@@ -42,4 +41,8 @@ public class landingPageTest {
 	  assertTrue(actResult.equals("NumpyNinja") || actResult.equals("Numpy Ninja"),"Title is validated");
 	  
   }
+  @AfterClass
+	public void tearDown() throws InterruptedException {
+//		landingPage.getDriver().quit();
+}
 }

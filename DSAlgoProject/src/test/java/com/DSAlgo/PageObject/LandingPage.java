@@ -17,7 +17,7 @@ import com.DSAlgo.utilities.webClick;
 
 	public class LandingPage {
 		
-		WebDriver driver;
+		public static WebDriver driver;
 		
 		public WebDriver getDriver() {
 			return driver;
@@ -32,7 +32,9 @@ import com.DSAlgo.utilities.webClick;
 		public LandingPage() {
 			System.out.println("System property: " + System.getProperty("user.dir"));
 			System.setProperty("webdriver.chrome.driver",driverPath);// Set the chrome driver path
-			driver = new ChromeDriver();
+			if (driver == null) {
+				driver = new ChromeDriver();
+			}
 		}
 		
 	

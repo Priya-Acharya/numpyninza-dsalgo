@@ -10,6 +10,7 @@ import com.DSAlgo.utilities.ExcelReadUtility;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.BeforeClass;
 
 import static org.testng.Assert.assertEquals;
@@ -20,6 +21,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
+@Listeners({AllureListener.class})
 public class LogInPageTest {
 
 	LogInPage logInPage;
@@ -71,35 +73,6 @@ public class LogInPageTest {
 
 	}
 
-//	@AfterClass
-//	public void afterClass() {
-//	}
-//
-//	@BeforeTest
-//	public void beforeTest() {
-//	}
-//
-//	@AfterTest
-//	public void afterTest() {
-//	}
-//
-//	@BeforeSuite
-//	public void beforeSuite() {
-//	}
-//
-//	@AfterSuite
-//	public void afterSuite() {
-//	}
-//
-//	@Test
-//	public void aftertestTest() {
-//
-//	}
-//
-//	@Test
-//	public void getStartedTest() {
-//		throw new RuntimeException("Test not implemented");
-//	}
 
 	@Test(dataProvider = "logindata")
 	public void logintest(String user, String pwd, String exp, String cases) {
@@ -107,7 +80,9 @@ public class LogInPageTest {
 		assertEquals(actRes, exp);
 	}
 	
-//	public static void main(String[] args) throws Exception {
-//		new LogInPageTest().dp();
-//	}
+	@AfterClass
+	public void tearDown() throws InterruptedException {
+		//landingPage.getDriver().quit();
+		hmp.signOut();
+}
 }

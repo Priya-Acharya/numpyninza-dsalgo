@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.DSAlgo.PageObject.DataStructurePage;
@@ -14,7 +15,7 @@ import com.DSAlgo.PageObject.LandingPage;
 import com.DSAlgo.PageObject.LogInPage;
 
 
-
+@Listeners({AllureListener.class})
 public class DataStructureTest {
 	
 	
@@ -97,7 +98,8 @@ public class DataStructureTest {
 	
 	@AfterClass
 	public void tearDown() throws InterruptedException{
-		landingPage.getDriver().quit();
+		//landingPage.getDriver().quit();
+		hmp.signOut();
 	}
 	
 	

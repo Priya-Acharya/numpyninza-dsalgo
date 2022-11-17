@@ -10,13 +10,14 @@ import com.DSAlgo.PageObject.LogInPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.BeforeClass;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
-
+@Listeners({AllureListener.class})
 public class HomePageTest {
 	HomePage hmp;
 	LandingPage landingPage;

@@ -5,13 +5,14 @@ package com.DSAlgo.TestCase;
 	import org.testng.Assert;
 	import org.testng.annotations.AfterClass;
 	import org.testng.annotations.BeforeClass;
-	import org.testng.annotations.Test;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 	import com.DSAlgo.PageObject.HomePage;
 	import com.DSAlgo.PageObject.LandingPage;
 	import com.DSAlgo.PageObject.LogInPage;
 	import com.DSAlgo.PageObject.TreePage;
-	 
+	@Listeners({AllureListener.class})
 	public class TreePageTest  {
 
 		HomePage homePage;
@@ -255,7 +256,8 @@ package com.DSAlgo.TestCase;
 		
 		public void closeDriver() throws InterruptedException{
 			Thread.sleep(4000);
-			landingPage.getDriver().quit();
+//			landingPage.getDriver().quit();
+			homePage.signOut();
 		}
 
 	}

@@ -8,6 +8,7 @@ import com.DSAlgo.PageObject.LandingPage;
 import com.DSAlgo.PageObject.LogInPage;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
@@ -15,7 +16,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.AfterClass;
-
+@Listeners({AllureListener.class})
 public class GraphPageTest {
 	GraphPage gp;
 	HomePage hmp;
@@ -101,7 +102,8 @@ public class GraphPageTest {
 
 	@AfterClass
 	public void tearDown() throws InterruptedException {
-		landingPage.getDriver().quit();
+		//landingPage.getDriver().quit();
+		hmp.signOut();
 	}
 
 }

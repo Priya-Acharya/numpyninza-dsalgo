@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.DSAlgo.PageObject.DataStructurePage;
@@ -13,7 +14,7 @@ import com.DSAlgo.PageObject.LandingPage;
 import com.DSAlgo.PageObject.LinkedListPage;
 import com.DSAlgo.PageObject.LogInPage;
 import com.DSAlgo.PageObject.StackPage;
-
+@Listeners({AllureListener.class})
 public class StackPageTest {
 	
 	
@@ -117,7 +118,8 @@ public class StackPageTest {
  @AfterClass
  public void tearDown() 
  {
-	 landingPage.getDriver().quit();
+//	 landingPage.getDriver().quit();
+	 hmp.signOut();
  }
 }
 	
